@@ -33,5 +33,43 @@ for(var i = 0; i < keys.length; i++){
             decimalAdded = false;
         }
 
-    }
+        else if(operators.indexOf(btnVal) > -1) {
+            
+			// Operator is clicked
+			// Get the last character from the equation
+			var lastChar = inputVal[inputVal.length - 1];
+			
+			// Only add operator if input is not empty and there is no operator at the last
+			if(inputVal != '' && operators.indexOf(lastChar) == -1) 
+				input.innerHTML += btnVal;
+			
+			// Allow minus if the string is empty
+			else if(inputVal == '' && btnVal == '-') 
+				input.innerHTML += btnVal;
+			
+			// Replace the last operator (if exists) with the newly pressed operator
+			if(operators.indexOf(lastChar) > -1 && inputVal.length > 1) {
+				// Here, '.' matches any character while $ denotes the end of string, so anything (will be an operator in this case) at the end of string will get replaced by new operator
+				input.innerHTML = inputVal.replace(/.$/, btnVal);
+			}
+			
+			decimalAdded =false;
+		}
+		
+		// Now only the decimal problem is left. We can solve it easily using a flag 'decimalAdded' which we'll set once the decimal is added and prevent more decimals to be added once it's set. It will be reset when an operator, eval or clear key is pressed.
+		else if(btnVal == '.') {
+			if(!decimalAdded) {
+				input.innerHTML += btnVal;
+				decimalAdded = true;
+			}
+		}
+		
+		// if any other key is pressed, just append it
+		else {
+			input.innerHTML += btnVal;
+		}
+		
+		// prevent page jumps
+		e.preventDefault();
+	} 
 }

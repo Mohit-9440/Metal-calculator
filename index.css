@@ -76,7 +76,7 @@
 html {
     font:62.5%/1 "Droid Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
     background-color: hsla(0,0%,90%,1);  
-    background-image: url(https://2.bp.blogspot.com/_7z9iqYs0SgY/TKyJmNaAb2I/AAAAAAAAFuY/jTM5iJWwMK8/s1600/Concrete+Wall+2.png);
+    background-image: url(https://images.unsplash.com/photo-1550895030-823330fc2551?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80);
     background-size: 5px;
 }
   
@@ -118,7 +118,7 @@ a {
 /* Linear ------------------------- */
   
 .metal.linear {
-    width: 100px;
+    width: 90px;
     font-size: 4em;
     height: 80px;
     border-radius: .5em;
